@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Dropzone from 'react-dropzone'
+import sha1 from 'sha1'
 
 class Images extends Component {
 
@@ -13,10 +14,10 @@ class Images extends Component {
         const url = "https://api.cloudinary.com/v1_1/"+cloudName+"/img/upload"
 
         const timestamp = Date.now()/1000
-        const uploadPreset = 'rnxsz09i'
+        const uploadPreset = 'd0hrt3wy'
 
-        const paramsStr = 'timestamp='+timestamp='&upload_preset'+uploadPreset
-        const signature = shq1(paramsStr)
+        const paramsStr = 'timestamp='+timestamp='&upload_preset='+uploadPreset+"PMLf7RMLbEKZc_AKs5W2Hlxlz8c"
+        const signature = sha1(paramsStr)
 
         const params = {
             'api_key': '728318899993142',
@@ -24,8 +25,6 @@ class Images extends Component {
             'upload_preset': uploadPreset,
             'signature': signature
         }
-
-
     }
 
     render() {
